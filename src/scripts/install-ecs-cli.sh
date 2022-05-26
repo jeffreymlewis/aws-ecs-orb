@@ -23,7 +23,8 @@ Install_ECS_CLI(){
 #     # $SUDO rm -rf /usr/local/bin/ecs-cli
 # }
 
-if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
+#if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
+if [ "$(command -v ecs-cli > /dev/null; echo $?)" -ne 1 ]; then
     echo "debugging 1"
     # if command -v ecs-cli; then    
     #     echo "debugging 2"
