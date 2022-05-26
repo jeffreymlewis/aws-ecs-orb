@@ -20,7 +20,7 @@ Install_ECS_CLI(){
 Uninstall_ECS_CLI(){
     echo "Uninstalling ECS CLI..."
     # ECS_CLI_PATH="$(command -v ecs-cli)"
-    # $SUDO rm -rf "${ECS_CLI_PATH}"
+    $SUDO rm -rf /usr/local/bin/ecs-cli
 }
 
 if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
