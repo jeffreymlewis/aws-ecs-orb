@@ -18,9 +18,4 @@ $SUDO curl -Lo "${ECS_PARAM_INSTALL_DIR}" "https://amazon-ecs-cli.s3.amazonaws.c
 
 $SUDO chmod +x "${ECS_PARAM_INSTALL_DIR}"
 
-if [ "$(ecs-cli --version > /dev/null 2>&1; echo $?)" -eq 0 ]; then
-    echo "ecs-cli installed successfully."
-else
-    echo "ecs-cli installation failed."
-    exit 1
-fi
+ecs-cli --version
