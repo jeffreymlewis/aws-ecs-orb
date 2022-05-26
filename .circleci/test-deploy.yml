@@ -347,7 +347,7 @@ jobs:
           Specify the installation directory
     executor: <<parameters.executor>>
     steps:
-      - install-ecs-cli:
+      - aws-ecs/install-ecs-cli:
           version: <<parameters.version>>
           install-dir: <<parameters.install-dir>>
 workflows:
