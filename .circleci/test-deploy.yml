@@ -358,7 +358,7 @@ workflows:
           version: "v1.2.1"
           matrix:
             parameters:
-              executor: [docker, mac]
+              executor: [linux, mac]
           filters: *filters
       #################
       # Fargate
