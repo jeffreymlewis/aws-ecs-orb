@@ -18,7 +18,8 @@ Install_ECS_CLI(){
 }
 
 Uninstall_ECS_CLI(){
-    $SUDO rm -rf "${ECS_PARAM_INSTALL_DIR}"
+    ECS_CLI_PATH="$(which ecs-cli)"
+    $SUDO rm -rf "${ECS_CLI_PATH}"
 }
 
 if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
