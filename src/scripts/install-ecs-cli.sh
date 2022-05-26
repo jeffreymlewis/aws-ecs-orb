@@ -25,7 +25,7 @@ Uninstall_ECS_CLI(){
 
 if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
     echo "debugging 1"
-    if [ "$(command -v ecs-cli)" ]; then    
+    if [ command -v ecs-cli" ]; then    
         echo "debugging 2"
         Uninstall_ECS_CLI
     fi
