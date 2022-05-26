@@ -18,7 +18,7 @@ Install_ECS_CLI(){
 }
 
 Uninstall_ECS_CLI(){
-    ECS_CLI_PATH="$(which ecs-cli)"
+    ECS_CLI_PATH="$(command -v ecs-cli)"
     $SUDO rm -rf "${ECS_CLI_PATH}"
 }
 
