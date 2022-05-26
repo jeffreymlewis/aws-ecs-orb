@@ -342,7 +342,7 @@ jobs:
         type: string
       install-dir:
         type: string
-        default: "/usr/local/ecs-cli"
+        default: "/usr/local/bin/ecs-cli"
         description: |
           Specify the installation directory
     executor: <<parameters.executor>>
