@@ -29,7 +29,7 @@ if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
         echo "debugging 2"
         Uninstall_ECS_CLI
     fi
-
+    Uninstall_ECS_CLI
     echo "Installing ECS CLI..."
     Install_ECS_CLI "${ECS_PARAM_VERSION}"
     ecs-cli --version
