@@ -18,14 +18,12 @@ Install_ECS_CLI(){
 }
 
 Uninstall_ECS_CLI(){
-    #shellcheck disable=SC2230
-    ECS_CLI_PATH="$(which ecs-cli)"
+    ECS_CLI_PATH="$(command -v ecs-cli)"
     $SUDO rm -rf "${ECS_CLI_PATH}"
 }
 
 if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
-    #shellcheck disable=SC2230
-    if [ "$(which ecs-cli; echo $?)" = 0 ]; then    
+    if [ "$(command -v ecs-cli; echo $?)" = 0 ]; then    
         Uninstall_ECS_CLI
     fi
 
