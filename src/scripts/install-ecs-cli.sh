@@ -17,11 +17,11 @@ Install_ECS_CLI(){
     $SUDO chmod +x "${ECS_PARAM_INSTALL_DIR}"
 }
 
-Uninstall_ECS_CLI(){
-    echo "Uninstalling ECS CLI..."
-    # ECS_CLI_PATH="$(command -v ecs-cli)"
-    $SUDO rm -rf /usr/local/bin/ecs-cli
-}
+# Uninstall_ECS_CLI(){
+#     echo "Uninstalling ECS CLI..."
+#     # ECS_CLI_PATH="$(command -v ecs-cli)"
+#     # $SUDO rm -rf /usr/local/bin/ecs-cli
+# }
 
 if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
     echo "debugging 1"
@@ -36,7 +36,7 @@ if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
 else
     if [ "$ECS_PARAM_OVERRIDE_INSTALLED" = 1 ]; then
         echo "Overriding installed ECS CLI..."
-        Uninstall_ECS_CLI
+        # Uninstall_ECS_CLI
         Install_ECS_CLI "${ECS_PARAM_VERSION}"
         ecs-cli --version
     else
