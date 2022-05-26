@@ -745,7 +745,7 @@ workflows:
 executors:
   mac:
     macos:
-      xcode: 13.3.1
+      xcode: 13.3.6
   linux:
     docker:
       - image: cimg/base:current
