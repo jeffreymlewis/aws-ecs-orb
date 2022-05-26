@@ -24,7 +24,11 @@ Uninstall_ECS_CLI(){
 }
 
 if [ "$(ecs-cli --version > /dev/null; echo $?)" -ne 0 ]; then
-    Uninstall_ECS_CLI
+    #shellcheck disable=SC2230
+    if [ "$(which ecs-cli; echo $?)" = 0 ]; then    
+        Uninstall_ECS_CLI
+    fi
+
     echo "Installing ECS CLI..."
     Install_ECS_CLI "${ECS_PARAM_VERSION}"
     ecs-cli --version
@@ -34,7 +38,9 @@ else
         Uninstall_ECS_CLI
         Install_ECS_CLI "${ECS_PARAM_VERSION}"
         ecs-cli --version
+    else
+        echo "ECS CLI is already installed."
+        ecs-cli --version
     fi
-    echo "ECS CLI is already installed."
 fi
 
