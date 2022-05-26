@@ -345,11 +345,16 @@ jobs:
         default: "/usr/local/bin/ecs-cli"
         description: |
           Specify the installation directory
+      override-installed:
+        type: boolean
+        default: false
+        description: Enable this to override the installed version and install your specified version.
     executor: <<parameters.executor>>
     steps:
       - aws-ecs/install-ecs-cli:
           version: <<parameters.version>>
           install-dir: <<parameters.install-dir>>
+          override-installed: <<parameters.override-installed>>
 workflows:
   test-deploy:
     jobs:
@@ -745,7 +750,7 @@ workflows:
 executors:
   mac:
     macos:
-      xcode: 13.3.6
+      xcode: 13.3.1
   linux:
     docker:
       - image: cimg/base:current
